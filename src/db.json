@@ -1,0 +1,34 @@
+{
+  "empleados": [
+    {
+      "cedula": "1311742041",
+      "nombres": "REGYNALD",
+      "apellidos": "ZAMBRANO",
+      "correo": "zreyleo@gmail.com",
+      "fechaNacimiento": null,
+      "direccion": null,
+      "telefono": null,
+      "vacunado": null,
+      "vacuna": null,
+      "dosis": null,
+      "username": "rz2041",
+      "password": "1311742041Z",
+      "id": 1
+    },
+    {
+      "cedula": "1303671984",
+      "nombres": "LADY",
+      "apellidos": "PERERO",
+      "correo": "ladypererom@gmail.com",
+      "fechaNacimiento": null,
+      "direccion": null,
+      "telefono": null,
+      "vacunado": null,
+      "vacuna": null,
+      "dosis": null,
+      "username": "lp1984",
+      "password": "1303671984P",
+      "id": 2
+    }
+  ]
+}
