@@ -1,11 +1,16 @@
-import RegisterEmployeeForm from './components/RegisterEmployeeForm';
 import { GlobalStateProvider } from './GlobalState';
+
+import LoginEmployeeForm from './components/LoginEmployeeForm';
+import RegisterEmployeeForm from './components/RegisterEmployeeForm';
+import UpdateInformationForm from './components/UpdateInformationForm';
 
 function App() {
   return (
     <GlobalStateProvider>
-      <div className="App">
+      <div>
         <RegisterEmployeeForm />
+        <LoginEmployeeForm />
+        <UpdateInformationForm />
       </div>
     </GlobalStateProvider>
   );

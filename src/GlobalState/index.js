@@ -5,14 +5,15 @@ import db from '../db.json'
 // actions
 const SET_SESSION_ROLE = 'SET_SESSION_ROLE';
 const ADD_EMPLOYEE = 'ADD_EMPLOYEE';
-// const ADMIN_ROLE = 'ADMIN_ROLE';
+const SET_EMPLOPYEE_SESSION = 'SET_EMPLOPYEE_SESSION';
 // const ADMIN_ROLE = 'ADMIN_ROLE';
 
 export const Context = createContext();
 
 const defaultState = {
     sessionRole: '',
-    empleados: db.empleados
+    empleados: db.empleados,
+    sessionEmpleado: null
 }
 
 const reducer = (state, action) => {
@@ -42,6 +43,12 @@ const reducer = (state, action) => {
                 }
             }
 
+        case SET_EMPLOPYEE_SESSION:
+            return {
+                ...state,
+                sessionEmpleado: action.payload
+            }
+
         default:
             return state;
     }
@@ -50,9 +57,23 @@ const reducer = (state, action) => {
 export const GlobalStateProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, defaultState);
 
+    const setSessionRole = (role) => {
+        dispatch({
+            type: SET_SESSION_ROLE,
+            payload: role
+        })
+    }
+
     const addEmployee = (empleado) => {
         dispatch({
             type: ADD_EMPLOYEE,
+            payload: empleado
+        })
+    }
+
+    const setEmployeeSession = (empleado) => {
+        dispatch({
+            type: SET_EMPLOPYEE_SESSION,
             payload: empleado
         })
     }
@@ -61,7 +82,9 @@ export const GlobalStateProvider = ({ children }) => {
         <Context.Provider
             value={{
                 ...state,
-                addEmployee
+                setSessionRole,
+                addEmployee,
+                setEmployeeSession
             }}
         >
             { children }
