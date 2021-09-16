@@ -1,13 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router";
 import moment from 'moment';
 
 import { Context } from '../GlobalState';
 
 import FormField from "./FormField";
 import InputSubmit from "./InputSubmit"
+import { EMPLOYEE_ROLE } from "../CONSTANTS";
 
 const UpdateInformationForm = () => {
-    const { sessionEmpleado, updateEmployeeInformation } = useContext(Context)
+    const { sessionEmpleado, updateEmployeeInformation, sessionRole } = useContext(Context)
+
+    const history = useHistory();
     
     const [nacimiento, setNacimiento] = useState(sessionEmpleado.fechaNacimiento || '')
     const [direccion, setDireccion] = useState(sessionEmpleado.direccion || '')
@@ -22,6 +26,12 @@ const UpdateInformationForm = () => {
 
     const minVacunacion = moment("2020-12-31").format("YYYY-MM-DD");
     const maxVacunacion = moment().subtract(15, "days").format("YYYY-MM-DD");
+
+    useEffect(() => {
+        if (sessionRole != EMPLOYEE_ROLE) {
+            history.push('/login/empleados')
+        }
+    }, []);
 
     const handleClickVacunado = () => {
         setVacuna('')

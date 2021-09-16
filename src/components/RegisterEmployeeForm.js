@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
-import { CANNOT_ADD_THAT_EMPLOYEE } from "../CONSTANTS";
+import { ADMIN_ROLE, CANNOT_ADD_THAT_EMPLOYEE } from "../CONSTANTS";
 
 import { Context } from "../GlobalState";
 
@@ -10,8 +11,9 @@ import FormField from "./FormField";
 import InputSubmit from "./InputSubmit";
 
 const RegisterEmployeeForm = () => {
-    const { empleados, addEmployee } = useContext(Context)
+    const { empleados, addEmployee, sessionRole } = useContext(Context)
 
+    const history = useHistory();
 
     const [cedula, setCedula] = useState('');
     const [nombres, setNombres] = useState('');
@@ -55,6 +57,12 @@ const RegisterEmployeeForm = () => {
     const handleChangeCorreo = (value) => {
         setCorreo(value.toLowerCase());
     }
+
+    useEffect(() => {
+        if (sessionRole != ADMIN_ROLE) {
+            history.push('/login/administrador')
+        }
+    }, []);
 
     useEffect(() => {
         if (!validateCedulaRegex.test(cedula)) { // error en la cedula

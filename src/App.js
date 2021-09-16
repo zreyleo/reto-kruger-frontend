@@ -1,8 +1,7 @@
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 
 import { GlobalStateProvider } from './GlobalState';
@@ -13,6 +12,7 @@ import UpdateInformationForm from './components/UpdateInformationForm';
 import LoginAdministrador from "./components/LoginAdministrador";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
+import EmployeesTable from "./components/EmployeesTable";
 
 function App() {
   return (
@@ -31,6 +31,9 @@ function App() {
 
             <Route path="/administrador/dashboard">
               <RegisterEmployeeForm />
+            </Route>
+            <Route path="/administrador/empleados">
+              <EmployeesTable />
             </Route>
 
             <Route path="/empleados">

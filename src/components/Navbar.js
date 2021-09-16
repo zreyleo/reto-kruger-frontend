@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { ADMIN_ROLE } from "../CONSTANTS";
 
 import { Context } from "../GlobalState";
 
@@ -19,7 +20,18 @@ const Navbar = () => {
                                     <Link className="text-white" to="/login/empleados">Login Empleado</Link>
                                 </>
                             ) : (
-                                <Link className="text-white" to="/">Cerrar Sesi&oacute;n</Link>
+                                <>
+                                    {
+                                        sessionRole == ADMIN_ROLE && (
+                                            <>
+                                                <Link to="/administrador/dashboard" className="text-white">Registrar Empleados</Link>
+                                                <Link to="/administrador/empleados" className="text-white">Ver Empleados</Link>
+                                            </>
+                                        )
+                                    }
+
+                                    <Link className="text-white" to="/">Cerrar Sesi&oacute;n</Link>
+                                </>
                             )
                         }
                     </div>
