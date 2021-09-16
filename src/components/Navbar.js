@@ -8,10 +8,17 @@ const Navbar = () => {
 
     return (
         <nav className="w-full">
+            {
+                !sessionRole ? (
+                    <>
                         <Link to="/login/administrador">Login Administrador</Link>
 
                         <Link to="/login/empleados">Login Empleado</Link>
+                    </>
+                ) : (
                     <Link to="/">Cerrar Sesi&oacute;n</Link>
+                )
+            }
         </nav >
     );
 }

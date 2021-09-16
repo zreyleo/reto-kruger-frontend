@@ -19,7 +19,7 @@ function App() {
     <GlobalStateProvider>
       <Router>
         <Navbar />
-        <div>
+        <div className="container">
           <Switch>
             <Route path="/login/administrador">
               <LoginAdministrador />
