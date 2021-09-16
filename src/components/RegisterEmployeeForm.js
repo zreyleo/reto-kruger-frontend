@@ -23,7 +23,7 @@ const RegisterEmployeeForm = () => {
     const [errorMessages, setErrorMessages] = useState([]);
 
     const validateCedulaRegex = /^\d{10}$/;
-    const validateNombresApellidosRegex = /^[a-z]+$/i;
+    const validateNombresApellidosRegex = /^[a-z][a-z\s]*$/i;
     const validateCorreoRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 
@@ -36,7 +36,7 @@ const RegisterEmployeeForm = () => {
     }
 
     const handleChangeNombres = (value) => {
-        if (/^[a-z]*$/i.test(value)) {
+        if (/^[a-z][a-z\s]*$/i.test(value)) {
             setNombres(value.toUpperCase());
         } else {
             return
@@ -45,7 +45,7 @@ const RegisterEmployeeForm = () => {
     }
 
     const handleChangeApellidos = (value) => {
-        if (/^[a-z]*$/i.test(value)) {
+        if (/^[a-z][a-z\s]*$/i.test(value)) {
             setApellidos(value.toUpperCase());
         } else {
             return
