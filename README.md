@@ -3,3 +3,5 @@
 Esta aplicacion esta hecha con React.js
 
 para poder iniciarla primero se instala los paquetes con `npm i`, luego `npm run server` y finalmente `npm start`
+
+usuario y clave para administrador es `admin`

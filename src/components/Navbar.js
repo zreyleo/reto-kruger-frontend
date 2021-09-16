@@ -10,7 +10,7 @@ const Navbar = () => {
         <nav className="w-full bg-secondary">
             <div className="container">
                 <div className="row">
-                    <div className="py-2 col-md-4 offset-8 d-flex justify-content-between">
+                    <div className="py-2 col-md-6 offset-6 d-flex justify-content-between">
                         {
                             !sessionRole ? (
                                 <>
