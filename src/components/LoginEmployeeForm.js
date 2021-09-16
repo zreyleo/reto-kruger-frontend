@@ -23,7 +23,7 @@ const LoginEmployeeForm = () => {
                 return false;
             }
         })) {
-            const empleado = empleados.filter(empl => empl.username === username && empl.password === password)
+            const empleado = empleados.filter(empl => empl.username === username && empl.password === password)[0]
             setSessionRole(EMPLOYEE_ROLE)
             setEmployeeSession(empleado);
         } else {

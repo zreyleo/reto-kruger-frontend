@@ -9,6 +9,7 @@ class Empleado {
         this.telefono = null;
         this.vacunado = null;
         this.vacuna = null;
+        this.fechaVacunacion = null;
         this.dosis = null;
 
         this.username = nombres.toLowerCase().charAt(0) + apellidos.toLowerCase().charAt(0) + cedula.slice(-4);

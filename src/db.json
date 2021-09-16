@@ -5,15 +5,16 @@
       "nombres": "REGYNALD",
       "apellidos": "ZAMBRANO",
       "correo": "zreyleo@gmail.com",
-      "fechaNacimiento": null,
-      "direccion": null,
-      "telefono": null,
-      "vacunado": null,
-      "vacuna": null,
-      "dosis": null,
+      "fechaNacimiento": "2006-09-07",
+      "direccion": "Hola",
+      "telefono": "asdfasdf",
+      "vacunado": true,
+      "vacuna": "AstraZeneca",
+      "dosis": "2",
       "username": "rz2041",
       "password": "1311742041Z",
-      "id": 1
+      "id": 1,
+      "fechaVacunacion": "2021-08-26"
     },
     {
       "cedula": "1303671984",
