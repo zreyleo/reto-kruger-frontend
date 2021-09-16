@@ -1,39 +1,29 @@
 import { useContext, useState } from 'react';
 import { useHistory } from 'react-router';
 
-import { EMPLOYEE_ROLE } from '../CONSTANTS';
+import { ADMIN_ROLE } from '../CONSTANTS';
 
 import { Context } from '../GlobalState';
 
 import FormField from './FormField'
 import InputSubmit from './InputSubmit';
 
-const LoginEmployeeForm = () => {
+const LoginAdministrador = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
     const history = useHistory();
 
-    const { empleados, setEmployeeSession, setSessionRole } = useContext(Context);
+    const { setSessionRole } = useContext(Context);
 
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (empleados.some(empleado => {
-            if (empleado.username === username && empleado.password === password) {
-                return true
-            } else {
-                return false;
-            }
-        })) {
-            const empleado = empleados.filter(empl => empl.username === username && empl.password === password)[0]
-            setSessionRole(EMPLOYEE_ROLE)
-            
-            setEmployeeSession(empleado);
-
-            history.push("/empleados")
+        if (username === 'admin' && password === 'admin') {
+            setSessionRole(ADMIN_ROLE)
+            history.push('/administrador/dashboard')
         } else {
-            return;
+            
         }
     }
 
@@ -61,4 +51,4 @@ const LoginEmployeeForm = () => {
     );
 }
  
-export default LoginEmployeeForm;
+export default LoginAdministrador;

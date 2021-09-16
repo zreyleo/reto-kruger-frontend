@@ -7,6 +7,7 @@ const SET_SESSION_ROLE = 'SET_SESSION_ROLE';
 const ADD_EMPLOYEE = 'ADD_EMPLOYEE';
 const SET_EMPLOPYEE_SESSION = 'SET_EMPLOPYEE_SESSION';
 const UPDATE_EMPLOYEE_INFORMATION = 'UPDATE_EMPLOYEE_INFORMATION';
+const FLUSH_SESSION = 'FLUSH_SESSION';
 
 export const Context = createContext();
 
@@ -58,6 +59,13 @@ const reducer = (state, action) => {
                 }
             }
 
+        case FLUSH_SESSION:
+            return {
+                ...state,
+                sessionRole: '',
+                sessionEmpleado: {}
+            } 
+
         default:
             return state;
     }
@@ -94,6 +102,12 @@ export const GlobalStateProvider = ({ children }) => {
         })
     }
 
+    const flushSession = () => {
+        dispatch({
+            type: FLUSH_SESSION
+        })
+    }
+
     return (
         <Context.Provider
             value={{
@@ -101,7 +115,8 @@ export const GlobalStateProvider = ({ children }) => {
                 setSessionRole,
                 addEmployee,
                 setEmployeeSession,
-                updateEmployeeInformation
+                updateEmployeeInformation,
+                flushSession
             }}
         >
             { children }
