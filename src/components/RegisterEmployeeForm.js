@@ -7,6 +7,7 @@ import { Context } from "../GlobalState";
 import Empleado from "../models/Empleado";
 
 import FormField from "./FormField";
+import InputSubmit from "./InputSubmit";
 
 const RegisterEmployeeForm = () => {
     const { empleados, addEmployee } = useContext(Context)
@@ -129,11 +130,12 @@ const RegisterEmployeeForm = () => {
     }
 
     return (
-        <div>
-            <h1>Formulario para registrar empleados</h1>
+        <div className="row">
+            <h2 className="my-5 text-center">Formulario para registrar empleados</h2>
 
             <form
                 onSubmit={handleSubmit}
+                className="col-md-8 mx-auto"
             >
                 <FormField
                     label="cedula"
@@ -164,9 +166,7 @@ const RegisterEmployeeForm = () => {
                     handleChange={handleChangeCorreo}
                 />
 
-                <input
-                    type="submit"
-                />
+                <InputSubmit value="Guardar Empleado" />
             </form>
         </div>
     );

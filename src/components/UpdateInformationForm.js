@@ -74,15 +74,16 @@ const UpdateInformationForm = () => {
     }
 
     return (
-        <div>
-            <h2>Actualizar Informaci&oacute;n</h2>
+        <div className="row">
+            <h2 className="text-center my-5">Actualizar Informaci&oacute;n</h2>
 
             <form onSubmit={handleSubmit}>
-                <div>
+                <div className="form-group">
                     <label>Fecha de Nacimiento</label>
                     <input type="date" name="nacimiento" min={minNacimiento} max={maxNacimiento}
                         value={nacimiento}
                         onChange={e => setNacimiento(e.target.value)}
+                        className="form-control"
                     />
                 </div>
 
@@ -96,7 +97,7 @@ const UpdateInformationForm = () => {
                     handleChange={setTelefono}
                 />
 
-                <div>
+                <div className="form-group my-3">
                     <label>&#191;Est&aacute; vacunado?</label>
                     <input type="checkbox" name="vacunado"
                         checked={vacunado}
@@ -106,12 +107,13 @@ const UpdateInformationForm = () => {
                 {
                     vacunado && (
                         <fieldset>
-                            <div>
+                            <div className="form-group">
                                 <legend>Llenar la siguiente informaci&oacute;n</legend>
                                 <label>Vacuna</label>
                                 <select
                                     value={vacuna}
                                     onChange={e => setVacuna(e.target.value)}
+                                    className="form-control"
                                 >
                                     <option value="" disabled>-- seleccione --</option>
                                     <option value="Sputnik">Sputnik</option>
@@ -120,18 +122,20 @@ const UpdateInformationForm = () => {
                                     <option value="JhonsonAndJhonson">Jhonson&#38;Jhonson</option>
                                 </select>
                             </div>
-                            <div>
+                            <div className="form-group">
                                 <label>&Uacute;ltima Fecha de Vacunaci&oacute;n</label>
                                 <input type="date" name="vacunacion" min={minVacunacion} max={maxVacunacion}
                                     value={vacunacion}
                                     onChange={e => setVacunacion(e.target.value)}
+                                    className="form-control"
                                 />
                             </div>
-                            <div>
+                            <div className="form-group">
                                 <label>Dosis</label>
                                 <input type="number" name="dosis" min="1" step="1"
                                     value={dosis}
                                     onChange={e => setDosis(e.target.value)}
+                                    className="form-control"
                                 />
                             </div>
                         </fieldset>

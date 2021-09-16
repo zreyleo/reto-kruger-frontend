@@ -29,7 +29,7 @@ const LoginAdministrador = () => {
 
     return (
         <div className="row">
-            <h2 className="col-12 my-5 text-center">Inicio Sesi&oacute;n Administrador</h2>
+            <h2 className="my-5 text-center">Inicio Sesi&oacute;n Administrador</h2>
 
             <form onSubmit={handleSubmit} className="form col-md-6 mx-auto p-3 rounded-3">
                 <FormField 
