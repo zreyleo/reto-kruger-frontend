@@ -38,10 +38,10 @@ const LoginEmployeeForm = () => {
     }
 
     return (
-        <div>
-            <h2>Inicio Sesi&oacute;n Empleado</h2>
+        <div className="row">
+            <h2 className="col-12 text-center my-5">Inicio Sesi&oacute;n Empleado</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="col-md-6 mx-auto">
                 <FormField 
                     label="Usuario" 
                     type="text" 
